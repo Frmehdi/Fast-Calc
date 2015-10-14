@@ -1,0 +1,88 @@
+<%- include ../../layouts/header.ejs %>
+   
+    <div class="page-container">
+         <div class="row">
+      <div class="col-md-11">
+         <div style="border:1px solid #ddd;min-height:60px;padding:12px">
+                      
+           <div class="col-md-11">
+              <form class="form-inline" role="form">
+                  <div class="form-group"> Filter By : 
+                    <select id="sort-by" class="form-control">
+                        <option value="">-</option>
+                        <option value="id" <%= (curr_filt=='id') ? "selected=true" : "" %> >ID</option>
+                         <option value="username" <%= (curr_filt=='username') ? "selected=true" : "" %>>Username</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                     <input type="text" id="search-field" class="form-control" placeholder="Search..." value="<%= curr_search %>">
+                  </div>
+                     
+                    <a id="go-search" class="btn btn-default btn-warning"><i class="fa fa-search"></i> </a>
+                      
+                   <div class="form-group pull-right">
+                       <a href="javascript:void(0)" class="btn btn-success" data-toggle="modal" data-target="#modal-user"><i class="fa fa-plus"></i> Add User</a>
+                       <a href="/users/import" class="btn btn-primary"><i class="fa fa-compress"></i> Import</a>
+                       <a href="/users/export" class="btn btn-info"><i class="fa fa-expand"></i> Export</a>
+                   </div>
+                </form>
+           </div>
+         </div>
+     </div>
+    </div><!-- /.row -->
+    
+    
+       <div class="row">
+            <div class="col-xs-11 col-sm-6 col-md-11">
+               
+                <div class="table-responsive" style="margin-top:5px">
+                        <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Username</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% if(data.length){ 
+                                 var no = (curr_page -1 ) * 10 + 1;
+                                 
+                                 for(var i = 0;i < data.length;i++) { %>
+                                 
+                                <tr>
+                                    <td><%=no%></td>
+                                    <td><%=data[i].username %></td>
+                                    <td><%=(data[i].status =='1') ? 'Active' : 'Inactive' %></td>
+                                    <td>
+                                        <a href="javascript:void(0)" class="edit-user" data-user="<%=data[i].id%>,<%=data[i].username%>,<%=data[i].status%>">
+                                            <i class="fa fa-pencil"></i> Edit
+                                        </a>
+                                         | 
+                                        <a href="javascript:void(0)" onclick="delete_user(<%=data[i].id%>)">
+                                            <i class="fa fa-times"></i> Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            <% no++; }
+                            
+                             }else{ %>
+                                 <tr>
+                                    <td colspan="3">No user</td>
+                                 </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+                <%- pagination %>
+            </div>
+        </div>
+      
+        <!--Modal-->
+        <%- include modal_user.ejs %>
+        
+        
+        
+    </div> <!--end of page conatiner-->
+<%- include ../../layouts/footer.ejs %>

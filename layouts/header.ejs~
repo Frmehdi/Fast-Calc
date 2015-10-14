@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= (locals.title) ? title : 'Welcome Home' %></title>
+
+    <!-- Core CSS - Include with every page -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../css/back.css" rel="stylesheet">
+    <script type="text/javascript">
+        
+        var CURR_PAGE = <%= (locals.curr_page) ? curr_page :1 %>;
+        var CURR_FILT = "<%= (locals.curr_filt) ? curr_filt :'' %>";
+        var CURR_SEARCH = "<%= (locals.curr_search) ? curr_search:'' %>";
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+                
+        <%- include sidebar %>
+        
+        <div id="page-wrapper">

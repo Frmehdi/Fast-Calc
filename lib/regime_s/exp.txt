@@ -1,0 +1,36 @@
+/*for(var j = 0;j < data2.length;j++) {
+  
+  
+   sheet1.set(1, 2, 'Id calcule');
+   sheet1.set(2, 2, 'Source');
+    sheet1.set(3, 2, 'Poste 1');
+sheet1.set(4, 2, 'Poste 1');
+  sheet1.set(5, 2, 'Longueur');
+     sheet1.set(6, 2, 'Section cable');
+   sheet1.set(7, 2, 'Niveau tension');
+      sheet1.set(8, 2, 'Coefficient');
+      sheet1.set(9, 2, 'Puissance point');
+      sheet1.set(10, 2, 'Puissance cumulee');
+   sheet1.set(11, 2, 'Intensite');
+sheet1.set(12, 2, 'Chute tension');
+sheet1.set(13, 2, 'Delta cumulee');
+sheet1.set(14, 2, 'Delta U');
+for(var i = 0;i < data.length;i++) {
+ if(data[i].nom_boucle.toString('utf-8').trim() == data2[j].nom_boucle.toString('utf-8').trim()){
+  sheet1.set(1, i, data[i].id_calcule);
+   sheet1.set(2, i, data[i].id_source);
+    sheet1.set(3, i, data[i].PT01);
+sheet1.set(4, i, data[i].PT02);
+  sheet1.set(5, i, data[i].longueur);
+   sheet1.set(6, i, data[i].section_cable);
+      sheet1.set(7, i, data[i].niveau_tension);
+      sheet1.set(8, i, data[i].coefficient);
+      sheet1.set(9, i, data[i].puissance_point);
+   sheet1.set(10, i,data[i].puissance_cumulee);
+sheet1.set(11, i, data[i].intensite);
+sheet1.set(12, i, data[i].chute_tension);
+sheet1.set(13, i, data[i].delta_cumulee);
+sheet1.set(14, i, data[i].data[i].delta_u);
+
+    } }
+}*/

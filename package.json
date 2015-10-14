@@ -1,0 +1,17 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "main": "http://localhost:3720/",
+  "chromium-args": "--allow-running-insecure-content --ignore-certificate-errors",
+  "dependencies": {
+    "express": "3.4.8",
+    "ejs": "*"
+  },
+  "window": {
+    "toolbar": true
+  }
+}

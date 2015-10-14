@@ -1,0 +1,12 @@
+<%- include ../../layouts/header.ejs %>
+
+    <div class="page-container">
+    
+      <div class="row">
+          <div class="col-md-11">
+            <h2>Im DashBoard</h2>
+         </div>
+     </div><!-- /.row -->
+    
+    </div>
+<%- include ../../layouts/footer.ejs %>
